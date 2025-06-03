@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombre_app">Mi App</string>
+    <string name="logo_app">Logo de la aplicación</string>
+
+    <!-- Pantalla de Inicio de Sesión -->
+    <string name="titulo_bienvenida">Bienvenido de vuelta</string>
+    <string name="subtitulo_login">Inicia sesión para continuar</string>
+    <string name="pista_email">Email o usuario</string>
+    <string name="pista_contraseña">Contraseña</string>
+    <string name="contraseña_olvidada">¿Olvidaste tu contraseña?</string>
+    <string name="btn_iniciar_sesion">Iniciar Sesión</string>
+    <string name="o">o</string>
+    <string name="continuar_con_google">Continuar con Google</string>
+    <string name="sin_cuenta">¿No tienes cuenta? </string>
+    <string name="registrarse_ahora">Regístrate</string>
+
+    <!-- Mensajes de Validación -->
+    <string name="error_email_requerido">El email es requerido</string>
+    <string name="error_email_invalido">Email inválido</string>
+    <string name="error_contraseña_requerida">La contraseña es requerida</string>
+    <string name="error_contraseña_corta">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="error_login_fallido">Error al iniciar sesión</string>
+    <string name="error_red">Error de conexión</string>
+
+    <!-- Inicio de Productos -->
+    <string name="titulo_productos">Productos</string>
+    <string name="buscar_productos">Buscar por nombre o código…</string>
+    <string name="agregar_producto">Agregar Producto</string>
+    <string name="ordenar">Ordenar</string>
+    <string name="lista_productos">Lista de Productos</string>
+
+    <!-- Categorías -->
+    <string name="categoria_todos">Todos</string>
+    <string name="categoria_bebidas">Bebidas</string>
+    <string name="categoria_limpieza">Limpieza</string>
+    <string name="categoria_alimentos">Alimentos</string>
+    <string name="categoria_cuidado_personal">Cuidado Personal</string>
+    <string name="categoria_electronicos">Electrónicos</string>
+
+    <!-- Resumen -->
+    <string name="total_productos">Total Productos</string>
+    <string name="stock_bajo">Stock Bajo</string>
+    <string name="categorias">Categorías</string>
+
+    <!-- Elemento de Producto -->
+    <string name="etiqueta_precio">Precio:</string>
+    <string name="etiqueta_stock">Stock:</string>
+    <string name="opciones_producto">Opciones del producto</string>
+
+    <!-- Estado Vacío -->
+    <string name="sin_productos_encontrados">No se encontraron productos</string>
+    <string name="intentar_busqueda_diferente">Intenta con una búsqueda diferente o agrega nuevos productos</string>
+
+    <!-- Menú -->
+    <string name="accion_filtrar">Filtrar</string>
+    <string name="accion_configuracion">Configuración</string>
+    <string name="accion_exportar">Exportar</string>
+
+    <!-- Accesibilidad -->
+    <string name="categoria_bebidas_a11y">Categoría: Bebidas</string>
+    <string name="desc_icono_inventario">Ícono de inventario</string>
+    <string name="icono_producto">Icono del producto</string>
+    <string name="icono_metodo_pago">Icono del método de pago</string>
+    <string name="icono_cliente">Icono del cliente</string>
+    <string name="icono_bajada">Icono de perdida</string>
+
+    <!-- Historial y Ventas -->
+    <string name="historial_ventas">Historial de ventas</string>
+    <string name="confirmar_venta">Confirmar Venta</string>
+
+    <!-- Cantidad y Controles -->
+    <string name="disminuir_cantidad">Disminuir cantidad</string>
+    <string name="uno">1</string>
+    <string name="aumentar_cantidad">Aumentar cantidad</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="cantidad_y_total">Cantidad y Total</string>
+
+    <!-- Búsqueda y Scanner -->
+    <string name="buscar_producto">Buscar Producto</string>
+    <string name="scanner_codigo_barras">Scanner código de barras</string>
+
+    <!-- Información del Producto -->
+    <string name="imagen_producto">Imagen del producto</string>
+    <string name="nombre_producto">Nombre del Producto</string>
+    <string name="codigo_prod001">Código: PROD001</string>
+    <string name="producto_seleccionado">Producto Seleccionado</string>
+    <string name="nombre_o_codigo_producto">Nombre o código del producto</string>
+    <string name="inventario_actual">Inventario vacio</string>
+
+    <!-- Precios y Totales -->
+    <string name="precio_unitario">Precio unitario:</string>
+    <string name="precio_1299">$1,299.00</string>
+    <string name="total">Total:</string>
+
+    <!-- Stock -->
+    <string name="stock_disponible_25">Stock disponible: 25</string>
+    <string name="stock_teorico">Stock teórico</string>
+    <string name="stock_fisico">Stock físico</string>
+
+    <!-- HISTORIAL DE VENTAS -->
+
+    <!-- Títulos -->
+    <string name="titulo_historial_ventas">Historial de Ventas</string>
+    <string name="ventas_recientes">Ventas recientes</string>
+    <string name="filtrar_por_fecha">Filtrar por fecha</string>
+
+    <!-- Filtros de Fecha -->
+    <string name="filtro_hoy">Hoy</string>
+    <string name="filtro_esta_semana">Esta semana</string>
+    <string name="filtro_este_mes">Este mes</string>
+    <string name="filtro_personalizado">Personalizado</string>
+
+    <!-- Resumen de Ventas -->
+    <string name="total_de_ventas">Total de ventas</string>
+    <string name="monto_total">Monto total</string>
+    <string name="contador_ventas_default">0</string>
+    <string name="monto_ventas_default">$0.00</string>
+    <string name="agregar_nueva_venta">Agregar nueva venta</string>
+
+    <!-- Acciones -->
+    <string name="accion_registrar_venta">Registrar venta</string>
+    <string name="desc_agregar_nueva_venta">Agregar nueva venta</string>
+
+    <!-- Estado Vacío -->
+    <string name="sin_ventas_registradas">No hay ventas registradas</string>
+    <string name="mensaje_sin_ventas">Las ventas aparecerán aquí una vez que realices transacciones</string>
+    <string name="sin_productos_registrados">No hay ventas registradas</string>
+    <string name="mensaje_sin_producto">Agrega productos para comenzar el conteo</string>
+
+    <!-- Estados de Venta -->
+    <string name="estado_completada">Completada</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="estado_cancelada">Cancelada</string>
+    <string name="estado_recibo">No hay recibos disponibles</string>
+
+    <!-- Información de Venta -->
+    <string name="etiqueta_cantidad">Cantidad:</string>
+    <string name="producto_ejemplo">Producto ejemplo</string>
+    <string name="cliente_por_defecto">Cliente general</string>
+
+    <!-- Métodos de Pago -->
+    <string name="pago_efectivo">Efectivo</string>
+    <string name="pago_tarjeta">Tarjeta</string>
+    <string name="pago_transferencia">Transferencia</string>
+
+    <!-- Ejemplos -->
+    <string name="precio_ejemplo">$299.99</string>
+    <string name="cantidad_ejemplo">2</string>
+    <string name="fecha_ejemplo">15 May 2024, 14:30</string>
+    <string name="fecha_conteo_ejemplo">Semana del 27 Mayo - 2 Junio 2025</string>
+    <string name="numero_venta_ejemplo">#001</string>
+
+    <!-- conteo semanal -->
+    <string name="inventario_semanal">Inventario Semanal</string>
+    <string name="calcular_diferencias">Calcular Diferencias</string>
+    <string name="unidades">unidades</string>
+    <string name="p_rdida">Pérdida</string>
+    <string name="default_web_client_id">aaa</string>
+</resources>

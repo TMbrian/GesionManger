@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    style="@style/Widget.Material3.CardView.Outlined">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header with date and status -->
+        <TextView
+            android:id="@+id/tvSaleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/numero_venta_ejemplo"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="#001" />
+
+        <TextView
+            android:id="@+id/tvSaleDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fecha_ejemplo"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="@id/tvSaleId"
+            app:layout_constraintTop_toBottomOf="@id/tvSaleId"
+            tools:text="15 May 2024, 14:30" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estado_completada"
+            android:textSize="12sp"
+            app:chipBackgroundColor="?attr/colorPrimaryContainer"
+            app:chipStrokeWidth="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.Material3.Chip.Assist"
+            tools:text="Completada" />
+
+        <!-- Product info -->
+        <ImageView
+            android:id="@+id/ivProductIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_shopping_bag_24"
+            android:contentDescription="@string/icono_producto"
+            style="@style/CircularImageView"
+            android:backgroundTint="?attr/colorSurfaceVariant"
+            android:padding="8dp"
+            app:tint="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSaleDate"
+            app:layout_constraintBottom_toTopOf="@id/tvPaymentMethod"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/producto_ejemplo"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnSurface"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/ivProductIcon"
+            app:layout_constraintTop_toTopOf="@id/ivProductIcon"
+            app:layout_constraintEnd_toStartOf="@id/tvTotal"
+            android:layout_marginStart="12dp"
+            tools:text="Smartphone Samsung Galaxy" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cantidad_ejemplo"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="@id/tvProductName"
+            app:layout_constraintTop_toBottomOf="@id/tvProductName"
+            app:layout_constraintEnd_toStartOf="@id/tvTotal"
+            tools:text="Cantidad: 2" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/precio_ejemplo"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorSecondary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivProductIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivProductIcon"
+            tools:text="$299.99" />
+
+        <!-- Payment method and customer info - Optimized with compound drawables -->
+        <TextView
+            android:id="@+id/tvPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pago_tarjeta"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_credit_card_24"
+            app:drawableTint="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProductIcon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="12dp"
+            tools:text="Tarjeta" />
+
+        <TextView
+            android:id="@+id/tvCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cliente_por_defecto"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_person_24"
+            app:drawableTint="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPaymentMethod"
+            app:layout_constraintBottom_toBottomOf="@id/tvPaymentMethod"
+            tools:text="Juan Pérez" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

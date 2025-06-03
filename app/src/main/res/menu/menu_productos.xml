@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/accion_filtrar"
+        android:title="@string/accion_filtrar"
+        android:icon="@drawable/ic_filter_list_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/accion_exportar"
+        android:title="@string/accion_exportar"
+        android:icon="@drawable/ic_download_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/accion_configuracion"
+        android:title="@string/accion_configuracion"
+        android:icon="@drawable/ic_settings_24"
+        app:showAsAction="never" />
+
+</menu>

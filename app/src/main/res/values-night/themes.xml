@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GestionManager" parent="Theme.Material3.DayNight">
+        <!-- Colores principales del tema oscuro (Drive) -->
+        <item name="colorPrimary">@color/blue_300</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Colores secundarios -->
+        <item name="colorSecondary">@color/green_300</item>
+        <item name="colorSecondaryVariant">@color/green_500</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Colores de fondo y superficie -->
+        <item name="android:colorBackground">#121212</item>
+        <item name="colorSurface">#121212</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <!-- Colores de error -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/black</item>
+
+        <!-- Estado de la barra de sistema -->
+        <item name="android:statusBarColor">@color/blue_900</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
