@@ -157,4 +157,24 @@
     <string name="unidades">unidades</string>
     <string name="p_rdida">Pérdida</string>
     <string name="default_web_client_id">aaa</string>
+
+    <!-- dialogo de respuesta -->
+    <string name="success_message">Mensaje de éxito</string>
+    <string name="message_details">Detalles del mensaje</string>
+    <string name="operation_message">Ha ocurrido algo en la operación</string>
+    <string name="close">Cerrar</string>
+    <string name="return_home">Regresar al inicio</string>
+    <string name="retry">Reintentar</string>
+    <string name="icon_message_description">Icono de mensaje</string>
+
+    <!-- dialogo de progreso generico -->
+    <string name="loading_title">Cargando...</string>
+    <string name="loading_description">Por favor espera mientras procesamos tu solicitud</string>
+    <string name="progress_details">Procesando archivos</string>
+    <string name="cancel">Cancelar</string>
+    <string name="pause">Pausar</string>
+    <string name="resume">Reanudar</string>
+    <string name="completed">Completado</string>
+    <string name="operation_completed">La operación se completó exitosamente</string>
+    <string name="error">Error</string>
 </resources>
