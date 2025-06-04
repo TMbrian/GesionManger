@@ -1,10 +1,9 @@
-package com.example.gestionmanager.domain.repositories
+package com.example.gestionmanager.data.repositories
 
 import com.example.gestionmanager.data.datasources.remote.ApiService
 import com.example.gestionmanager.data.model.request.GoogleAuthRequest
 import com.example.gestionmanager.data.model.request.LoginRequest
 import com.example.gestionmanager.data.model.response.AuthResponse
-import com.example.gestionmanager.data.repositories.AuthRepository
 import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(

@@ -15,10 +15,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Actividad de inicio de sesión del usuario.
+ *
+ * Esta clase maneja la interfaz de usuario y los eventos de interacción
+ * para permitir el login mediante correo electrónico/contraseña o Google.
+ */
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
+
+    // ViewBinding para acceder a los elementos de la vista
     private lateinit var binding: ActivityLoginBinding
+
+    // ViewModel inyectado usando delegación de viewModels()
     private val viewModel: LoginViewModel by viewModels()
+
+    // Cliente de inicio de sesión de Google configurado con el ID de cliente web
     private val googleSignInClient: GoogleSignInClient by lazy {
         GoogleSignIn.getClient(
             this,
@@ -34,14 +46,16 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupObservers()
+        setupObservers() // Observa los cambios de estado de login
 
+        // Login con email y contraseña
         binding.btnIniciarSesion.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
             viewModel.loginWithEmail(email, password)
         }
 
+        // Login con Google
         binding.btnGoogleSignin.setOnClickListener {
             startActivityForResult(
                 googleSignInClient.signInIntent,
@@ -50,6 +64,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Observa el estado del login y actualiza la UI según sea necesario
+     */
     private fun setupObservers() {
         viewModel.loginState.observe(this) { resource ->
             when (resource) {
@@ -67,6 +84,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Maneja el resultado de la autenticación con Google
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_GOOGLE_SIGN_IN) {
@@ -80,11 +100,15 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Muestra u oculta el indicador de carga
+     */
     private fun showLoading(show: Boolean) {
         // Implementa tu lógica de loading aquí
     }
 
     companion object {
+        // Código de solicitud para el inicio de sesión con Google
         private const val RC_GOOGLE_SIGN_IN = 9001
     }
 }
