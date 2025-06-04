@@ -20,12 +20,14 @@ import com.example.gestionmanager.MainActivity
 import com.example.gestionmanager.R
 import com.example.gestionmanager.data.util.Resource
 import com.example.gestionmanager.databinding.ActivityLoginBinding
-import com.example.gestionmanager.ui.auth.dialog.GenericProgressBar
+import com.example.gestionmanager.ui.auth.dialog.mensajeGenericoDialog
+import com.example.gestionmanager.ui.auth.dialog.progressBarGenericoDialog
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 /**
  * ═══════════════════════════════════════════════════════════════════════════════════════════════
@@ -62,6 +64,9 @@ class LoginActivity : AppCompatActivity() {
     /** Diálogo de progreso personalizado para operaciones de login */
     private var progressDialog: AlertDialog? = null
 
+    /** Diálogo de mensajes personalizado para operaciones de login */
+    private var mensajeDialog: AlertDialog? = null
+
     /** Cliente de Google Sign-In configurado con token ID */
     private val googleSignInClient: GoogleSignInClient by lazy {
         GoogleSignIn.getClient(
@@ -88,6 +93,7 @@ class LoginActivity : AppCompatActivity() {
                 Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
             )
         }
+
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> {
             // Android 13 (API 33) - Nuevos permisos de media
             arrayOf(
@@ -97,6 +103,7 @@ class LoginActivity : AppCompatActivity() {
                 Manifest.permission.READ_MEDIA_VIDEO
             )
         }
+
         else -> {
             // Android 7-12 (API 24-32) - Permisos legacy
             arrayOf(
@@ -170,7 +177,10 @@ class LoginActivity : AppCompatActivity() {
         // Verificar cada permiso individualmente con logs
         permisosBasicos.forEach { permiso ->
             val estado = ContextCompat.checkSelfPermission(this, permiso)
-            Log.d("PermisosDebug", "$permiso: ${if (estado == PackageManager.PERMISSION_GRANTED) "GRANTED" else "DENIED"}")
+            Log.d(
+                "PermisosDebug",
+                "$permiso: ${if (estado == PackageManager.PERMISSION_GRANTED) "GRANTED" else "DENIED"}"
+            )
         }
 
         val permisosBasicosOtorgados = permisosBasicos.all {
@@ -188,16 +198,20 @@ class LoginActivity : AppCompatActivity() {
             this, Manifest.permission.READ_MEDIA_IMAGES
         ) == PackageManager.PERMISSION_GRANTED
 
-        val tieneAccesoSeleccionado = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-            ContextCompat.checkSelfPermission(
-                this, Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
-            ) == PackageManager.PERMISSION_GRANTED
-        } else {
-            false
-        }
+        val tieneAccesoSeleccionado =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                ContextCompat.checkSelfPermission(
+                    this, Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED
+                ) == PackageManager.PERMISSION_GRANTED
+            } else {
+                false
+            }
 
         val tieneAccesoFotos = tieneAccesoCompleto || tieneAccesoSeleccionado
-        Log.d("PermisosDebug", "Acceso fotos: completo=$tieneAccesoCompleto, seleccionado=$tieneAccesoSeleccionado")
+        Log.d(
+            "PermisosDebug",
+            "Acceso fotos: completo=$tieneAccesoCompleto, seleccionado=$tieneAccesoSeleccionado"
+        )
 
         return tieneAccesoFotos
     }
@@ -248,7 +262,10 @@ class LoginActivity : AppCompatActivity() {
             // Log de la respuesta del usuario
             permissions.forEachIndexed { index, permission ->
                 val granted = grantResults[index] == PackageManager.PERMISSION_GRANTED
-                Log.d("PermisosDebug", "Respuesta - $permission: ${if (granted) "GRANTED" else "DENIED"}")
+                Log.d(
+                    "PermisosDebug",
+                    "Respuesta - $permission: ${if (granted) "GRANTED" else "DENIED"}"
+                )
             }
 
             // Pequeño delay para asegurar que el sistema haya procesado los permisos
@@ -257,10 +274,16 @@ class LoginActivity : AppCompatActivity() {
 
                 // AQUÍ es donde verificamos los permisos después de la respuesta
                 if (tienePermisosNecesarios()) {
-                    Log.d("PermisosDebug", "✅ Permisos verificados correctamente - Inicializando componentes")
+                    Log.d(
+                        "PermisosDebug",
+                        "✅ Permisos verificados correctamente - Inicializando componentes"
+                    )
                     inicializarComponentes()
                 } else {
-                    Log.d("PermisosDebug", "❌ Aún faltan permisos - Mostrando opción de configuración")
+                    Log.d(
+                        "PermisosDebug",
+                        "❌ Aún faltan permisos - Mostrando opción de configuración"
+                    )
                     mostrarOpcionConfiguracion()
                 }
             }, 100) // Delay de 100ms
@@ -322,7 +345,11 @@ class LoginActivity : AppCompatActivity() {
                     viewModel.loginWithEmail(email, password)
                 }
             } else {
-                Toast.makeText(this, "Se requieren permisos para iniciar sesión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Se requieren permisos para iniciar sesión",
+                    Toast.LENGTH_SHORT
+                ).show()
                 verificarYSolicitarPermisos()
             }
         }
@@ -335,7 +362,11 @@ class LoginActivity : AppCompatActivity() {
                     RC_GOOGLE_SIGN_IN
                 )
             } else {
-                Toast.makeText(this, "Se requieren permisos para iniciar sesión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Se requieren permisos para iniciar sesión",
+                    Toast.LENGTH_SHORT
+                ).show()
                 verificarYSolicitarPermisos()
             }
         }
@@ -353,18 +384,22 @@ class LoginActivity : AppCompatActivity() {
                 binding.etEmail.error = "Ingrese su correo electrónico"
                 return false
             }
+
             !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
                 binding.etEmail.error = "Ingrese un correo válido"
                 return false
             }
+
             password.isEmpty() -> {
                 binding.etPassword.error = "Ingrese su contraseña"
                 return false
             }
+
             password.length < 6 -> {
                 binding.etPassword.error = "La contraseña debe tener al menos 6 caracteres"
                 return false
             }
+
             else -> return true
         }
     }
@@ -383,13 +418,15 @@ class LoginActivity : AppCompatActivity() {
                 is Resource.Loading -> {
                     mostrarDialogoProgreso(true)
                 }
+
                 is Resource.Success -> {
                     mostrarDialogoProgreso(false)
                     navegarAMainActivity()
                 }
+
                 is Resource.Error -> {
                     mostrarDialogoProgreso(false)
-                    mostrarError(resource.message ?: "Error desconocido")
+                    mostrarMensaje("ERROR",resource.message ?: "Error desconocido")
                 }
             }
         }
@@ -403,11 +440,10 @@ class LoginActivity : AppCompatActivity() {
         if (mostrar) {
             if (progressDialog == null) {
                 // Crear el diálogo de progreso personalizado
-                val progressView = GenericProgressBar(this).apply {
+                val progressView = progressBarGenericoDialog(this).apply {
                     setTitle("Iniciando sesión...")
                     setDescription("Verificando credenciales")
                     setIndeterminate(true)
-                    showButtons(false)
                     showLinearProgress(false)
                 }
 
@@ -434,11 +470,41 @@ class LoginActivity : AppCompatActivity() {
     }
 
     /**
-     * Muestra un mensaje de error al usuario
+     * Limpia los textos de los campos de la interfaz
+     */
+    private fun limpiarDatos() {
+        binding.etEmail.setText("")
+        binding.etPassword.setText("");
+    }
+
+    /**
+     * Muestra un mensaje de error, exito y advertencia al usuario
      * @param mensaje Mensaje de error a mostrar
      */
-    private fun mostrarError(mensaje: String) {
-        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+    private fun mostrarMensaje(tipomensaje: String, mensaje: String) {
+        if (mensajeDialog == null) {
+            // Crear el diálogo de mensaje personalizado
+            val mensajeView = mensajeGenericoDialog(this).apply {
+                setTitle(tipomensaje)
+                setSubTitle("Inicio De Sesión")
+                setDescription(mensaje)
+            }
+
+            mensajeDialog = AlertDialog.Builder(this)
+                .setView(mensajeView)
+                .setCancelable(false)
+                .create()
+
+            // Aquí le pasas la lógica para cerrar el diálogo cuando se presione el botón cerrar
+            mensajeView.getBinding().btnClose.setOnClickListener {
+                mensajeDialog?.dismiss()
+                mensajeDialog = null
+                habilitarBotones(true)
+                limpiarDatos()
+            }
+        }
+        mensajeDialog?.show()
+        habilitarBotones(false)
     }
 
     /**
@@ -466,10 +532,10 @@ class LoginActivity : AppCompatActivity() {
                 account.idToken?.let {
                     viewModel.loginWithGoogle(it)
                 } ?: run {
-                    mostrarError("Error: No se pudo obtener el token de Google")
+                    mostrarMensaje("ERROR", "Error: No se pudo obtener el token de Google")
                 }
             } catch (e: ApiException) {
-                mostrarError("Error con Google Sign-In: ${e.message}")
+                mostrarMensaje("ERROR", "Error con Google Sign-In: ${e.message}")
             }
         }
     }
