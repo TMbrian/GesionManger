@@ -28,6 +28,11 @@
 
     <style name="Theme.GestionManager" parent="Base.Theme.GestionManager" />
 
+    <style name="Base.Theme.GestionManager.NoActionBar" parent="Base.Theme.GestionManager">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!-- Custom Styles -->
     <style name="CircularImageView">
         <item name="cornerFamily">rounded</item>

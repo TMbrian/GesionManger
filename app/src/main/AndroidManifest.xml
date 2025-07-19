@@ -41,7 +41,8 @@
         <!-- Pantalla de inicio de la app -->
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Base.Theme.GestionManager.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

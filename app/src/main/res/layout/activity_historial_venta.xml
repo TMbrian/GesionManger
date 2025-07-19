@@ -95,7 +95,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/filtro_personalizado"
-                            app:chipIcon="@drawable/ic_calendar_month_24"
+                            app:chipIcon="@drawable/ic_calendar_month"
                             style="@style/Widget.Material3.Chip.Filter" />
 
                     </com.google.android.material.chip.ChipGroup>
@@ -199,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/accion_exportar"
-                    app:icon="@drawable/ic_file_download_24"
+                    app:icon="@drawable/ic_file_download"
                     android:textColor="@color/blue_900"
                     style="@style/Widget.Material3.Button.TextButton" />
 
@@ -228,7 +228,7 @@
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:src="@drawable/ic_receipt_long_24"
+                    android:src="@drawable/ic_receipt_long"
                     android:contentDescription="@string/estado_recibo"
                     android:alpha="0.6"
                     app:tint="?attr/colorOnSurfaceVariant"
@@ -256,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/accion_registrar_venta"
-                    app:icon="@drawable/ic_add_24"
+                    app:icon="@drawable/ic_add"
                     style="@style/Widget.Material3.Button" />
 
             </LinearLayout>
@@ -272,7 +272,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_add_24"
+        app:srcCompat="@drawable/ic_add"
         android:contentDescription="@string/agregar_nueva_venta" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

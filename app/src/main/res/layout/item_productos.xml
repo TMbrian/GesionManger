@@ -30,7 +30,7 @@
             app:strokeWidth="1dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_inventory_24" />
+            tools:src="@drawable/ic_inventory" />
 
         <!-- Product Name -->
         <com.google.android.material.textview.MaterialTextView
@@ -69,7 +69,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_more_vert_24"
+            android:src="@drawable/ic_more_vert"
             android:contentDescription="@string/producto_seleccionado"
             app:tint="?attr/colorOnSurfaceVariant"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
                 app:chipMinHeight="28dp"
                 app:chipStartPadding="8dp"
                 app:chipEndPadding="8dp"
-                app:chipIcon="@drawable/ic_inventory_2_24"
+                app:chipIcon="@drawable/ic_inventory_2"
                 app:chipIconSize="16dp"
                 tools:text="Stock: 25"
                 tools:chipBackgroundColor="?attr/colorSecondaryContainer"

@@ -78,7 +78,7 @@
                         app:boxCornerRadiusTopStart="12dp"
                         app:boxCornerRadiusBottomEnd="12dp"
                         app:boxCornerRadiusBottomStart="12dp"
-                        app:startIconDrawable="@drawable/ic_search_24"
+                        app:startIconDrawable="@drawable/ic_search"
                         app:endIconMode="clear_text"
                         app:layout_constraintWidth_max="480dp"
                         app:layout_constraintEnd_toStartOf="@+id/btnEscanear"
@@ -100,7 +100,7 @@
                         android:layout_height="48dp"
                         android:layout_marginStart="8dp"
                         android:contentDescription="@string/scanner_codigo_barras"
-                        app:icon="@drawable/ic_qr_code_scanner_24"
+                        app:icon="@drawable/ic_qr_code_scanner"
                         app:iconSize="24dp"
                         app:layout_constraintBottom_toBottomOf="@id/tilBuscarProducto"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -159,7 +159,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/ic_image_placeholder_24"
+                                android:src="@drawable/ic_image_placeholder"
                                 android:contentDescription="@string/imagen_producto" />
 
                         </com.google.android.material.card.MaterialCardView>
@@ -271,7 +271,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_marginEnd="12dp"
-                            app:icon="@drawable/ic_remove_24"
+                            app:icon="@drawable/ic_remove"
                             app:iconSize="20dp"
                             android:contentDescription="@string/disminuir_cantidad" />
 
@@ -305,7 +305,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_marginStart="12dp"
-                            app:icon="@drawable/ic_add_24"
+                            app:icon="@drawable/ic_add"
                             app:iconSize="20dp"
                             android:contentDescription="@string/aumentar_cantidad" />
 
@@ -435,7 +435,7 @@
         android:layout_margin="16dp"
         android:text="@string/confirmar_venta"
         android:visibility="gone"
-        app:icon="@drawable/ic_check_24"
+        app:icon="@drawable/ic_check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:visibility="visible" />

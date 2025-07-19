@@ -71,7 +71,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/buscar_producto"
-        app:startIconDrawable="@drawable/ic_search_24"
+        app:startIconDrawable="@drawable/ic_search"
         app:endIconMode="clear_text"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@id/headerCard"

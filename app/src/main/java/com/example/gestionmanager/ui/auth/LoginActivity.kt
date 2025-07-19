@@ -370,6 +370,11 @@ class LoginActivity : AppCompatActivity() {
                 verificarYSolicitarPermisos()
             }
         }
+
+        // Crear Usuario Nuevo
+        binding.tvRegister.setOnClickListener {
+            navegarARegistrarUsuarioActivity();
+        }
     }
 
     /**
@@ -512,6 +517,14 @@ class LoginActivity : AppCompatActivity() {
      */
     private fun navegarAMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
+
+    /**
+     * Navega a la actividad principal después del login exitoso
+     */
+    private fun navegarARegistrarUsuarioActivity() {
+        startActivity(Intent(this, RegistrarUsuarioActivity::class.java))
         finish()
     }
 
